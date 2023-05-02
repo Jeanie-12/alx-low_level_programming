@@ -3,20 +3,24 @@
 #include <time.h>
 
 /**
- * main - check the code
- * Return: Always 0.
+ * main - generates keygen.
+ *
+ * Return: 0 Always.
  */
 int main(void)
 {
-	char password[7];
-	int i;
+int r = 0, c = 0;
+time_t t;
 
-	srand(time(NULL));
-
-	for (i = 0; i < 7; i++)
-		password[i] = rand() % 94 + 33;
-
-	printf("%s\n", password);
-
-	return (0);
+srand((unsigned int) time(&t));
+while (c < 2772)
+{
+r = rand() % 128;
+if ((c + r) > 2772)
+break;
+c = c + r;
+printf("%c", r);
+}
+printf("%c\n", (2772 - c));
+return (0);
 }
