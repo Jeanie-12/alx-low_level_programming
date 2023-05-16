@@ -3,11 +3,15 @@
 
 /**
   * _puts - Prints a string
-  * @s: The string to print
+  * @str: The string to print
   *
   * Return: void
   */
-void _puts(char *s)
+void _puts(char *str)
 {
-	puts(s);
+	while (*str != '\0')
+	{
+		_putchar(*str++);
+	}
+	_putchar('\n');
 }
